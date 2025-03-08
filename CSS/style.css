@@ -128,19 +128,30 @@ footer {
 }
 @media (max-width: 700px) {
   .cronometro {
-    font-size: 80px;
-    margin-top: 300px;
+    font-size: 50px;
+    margin-top: 70vh;
+    margin-bottom: 20px;
   }
-  .btnBloco,
-  .btnIniciar,
-  .btnDescanso {
-    align-items: center;
+  .cronometroDescanso {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  .texto {
+    font-size: 20px;
+  }
+  .botoes {
+    justify-content: center;
     flex-direction: column;
-    gap: 20px;
+    display: flex;
+    gap: 10px;
   }
   .btnReiniciar {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 15px 0px;
+  }
+  footer {
+    margin-bottom: 40px;
   }
 }
