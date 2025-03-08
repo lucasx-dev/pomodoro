@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POMODORO</title>
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="/JS/script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cronometro" id="cronometro">
+        <h1 id="horas">00</h1>
+        <h2>:</h2>
+        <h1 id="minutos">25</h1>
+        <h2>:</h2>
+        <h1 id="segundos">00</h1>
+      </div>
+      <div class="cronometroDescanso">
+        <h1 id="minutosDescanso">05</h1>
+        <h2>:</h2>
+        <h1 id="segundosDescanso">00</h1>
+      </div>
+      <h1 class="texto">Cronômetro Pomodoro</h1>
+      <div class="botoes">
+        <button
+          onclick="iniciarCronometro()"
+          class="btnIniciar"
+          id="btnIniciar"
+        >
+          Iniciar
+        </button>
+        <button onclick="pausarCronometro()" class="btnPausar">Pausar</button>
+        <button onclick="blocoCronometro()" class="btnBloco">+25 MIN</button>
+        <button onclick="tempoDescanso()" class="btnDescanso" id="btnDescanso">
+          Descanso
+        </button>
+        <button onclick="reiniciarCronometro()" class="btnReiniciar">
+          Reiniciar Cronômetro
+        </button>
+      </div>
+      <button onclick="mudarTema()" class="btnTema">Alterar Tema</button>
+      <footer>&copy;Lucas Dev</footer>
+    </div>
+  </body>
+</html>

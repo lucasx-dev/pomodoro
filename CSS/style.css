@@ -1,0 +1,146 @@
+:root {
+  --bg-cor: rgb(0, 0, 0);
+  --txt-cor: rgb(255, 255, 255);
+  --roxo-cor: rgb(98, 0, 255);
+  --verm-cor: rgb(255, 65, 65);
+  --cinza-cor: rgba(255, 255, 255, 0.092);
+  --btnTema-cor: rgb(255, 255, 255);
+}
+.tema-claro {
+  --bg-cor: rgb(240, 240, 240);
+  --txt-cor: rgb(11, 11, 11);
+  --roxo-cor: rgb(98, 0, 255);
+  --verm-cor: rgb(255, 65, 65);
+  --cinza-cor: rgba(0, 0, 0, 0.065);
+  --btnTema-cor: rgb(11, 11, 11);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-cor);
+  color: var(--txt-cor);
+}
+.container {
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.texto {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+#alterar {
+  all: unset;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px;
+  justify-items: center;
+  align-items: center;
+}
+.cronometro {
+  font-family: "Bebas Neue", serif;
+  font-weight: 900;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 120px;
+  gap: 10px;
+  user-select: none;
+  margin-top: 50vh;
+}
+#horas,
+#minutos,
+#segundos {
+  background: var(--cinza-cor);
+  border-radius: 30px;
+}
+.cronometroDescanso {
+  font-family: "Bebas Neue", serif;
+  font-weight: 700;
+  font-style: normal;
+  display: flex;
+  font-size: 30px;
+  gap: 10px;
+  user-select: none;
+  color: var(--roxo-cor);
+}
+.botoes,
+.texto,
+.btnTema,
+footer {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.btnPausar,
+.btnIniciar,
+.btnBloco,
+.btnDescanso {
+  all: unset;
+  border: 3px solid var(--roxo-cor);
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px;
+  justify-items: center;
+  align-items: center;
+}
+.btnIniciar {
+  background: var(--roxo-cor);
+  color: white;
+}
+.btnReiniciar {
+  all: unset;
+  border: 3px solid var(--verm-cor);
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 30px;
+}
+.btnTema {
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: inherit;
+  border: dashed 1px var(--btnTema-cor);
+  border-radius: 20px;
+  color: var(--btnTema-cor);
+  fill: var(--btnTema-cor);
+  margin-top: 20px;
+}
+.hide {
+  display: none;
+}
+footer {
+  opacity: 20%;
+  margin-top: 50px;
+  user-select: none;
+}
+@media (max-width: 700px) {
+  .cronometro {
+    font-size: 80px;
+    margin-top: 300px;
+  }
+  .btnBloco,
+  .btnIniciar,
+  .btnDescanso {
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .btnReiniciar {
+    display: flex;
+    align-items: center;
+    margin: 15px 0px;
+  }
+}
