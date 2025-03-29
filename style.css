@@ -85,7 +85,8 @@ footer {
 .btnPausar,
 .btnIniciar,
 .btnBloco,
-.btnDescanso {
+.btnDescanso,
+.btnPausarDescanso {
   all: unset;
   border: 3px solid var(--roxo-cor);
   border-radius: 20px;

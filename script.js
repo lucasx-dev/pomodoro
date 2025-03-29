@@ -14,6 +14,9 @@ minutos = 25;
 segundos = 0;
 segundosDesc = 0;
 minutosDesc = 5;
+const btnPausarDescanso = document
+  .querySelector(".btnPausarDescanso")
+  .classList.add("hide");
 function mudarTema() {
   temaBtn.classList.toggle("tema-claro");
 }
@@ -28,17 +31,25 @@ function addBtnIniciar() {
 function removeBtnDescanso() {
   let botao3 = document.querySelector("#btnDescanso");
   botao3.classList.add("hide");
+  document.querySelector(".btnPausarDescanso").classList.remove("hide");
 }
 function addBtnDescanso() {
   let botao4 = document.querySelector("#btnDescanso");
   botao4.classList.remove("hide");
 }
+function alertaTempo() {
+  let audio = new Audio("./audio/timeout.mp3");
+  audio.play();
+  alert("Parabéns, você concluiu seu tempo de estudos!");
+}
 function iniciarCronometro() {
   removeBtnIniciar();
+  pausarDescanso();
   tempo = setInterval(function () {
     if (segundos === 0) {
       if (minutos === 0) {
         if (horas === 0) {
+          alertaTempo();
           clearInterval(tempo);
           addBtnIniciar();
           removeBtnDescanso();
@@ -83,9 +94,11 @@ function blocoCronometro() {
 }
 function tempoDescanso() {
   removeBtnDescanso();
+  pausarCronometro();
   descanso = setInterval(function () {
     if (segundosDesc === 0) {
       if (minutosDesc === 0) {
+        alertaTempo();
         minutosDesc = 5;
         segundosDesc = 0;
         clearInterval(descanso);
@@ -110,7 +123,18 @@ function pausarCronometro() {
   addBtnIniciar();
   clearInterval(tempo);
 }
+function ocultarBtn() {
+  document.querySelector(".btnPausarDescanso").classList.add("hide");
+}
+function pausarDescanso() {
+  /*addBtnDescanso();*/
+  ocultarBtn();
+  addBtnDescanso();
+  document.querySelector("#btnDescanso").innerText = String("Retomar Descanso");
+  clearInterval(descanso);
+}
 function reiniciarCronometro() {
+  ocultarBtn();
   clearInterval(tempo);
   clearInterval(descanso);
   minutos = 25;
@@ -118,6 +142,7 @@ function reiniciarCronometro() {
   horas = 0;
   minutosDesc = 5;
   segundosDesc = 0;
+  document.querySelector("#btnDescanso").innerHTML = String("Descanso");
   document.querySelector("#segundosDescanso").innerHTML = "00";
   document.querySelector("#minutosDescanso").innerHTML = "05";
   document.querySelector("#segundos").innerHTML = "00";
